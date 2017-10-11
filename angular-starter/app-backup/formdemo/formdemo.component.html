@@ -1,0 +1,22 @@
+<h1>Template Driven</h1>
+<form (ngSubmit)="onAdd(f)" #f="ngForm">
+  <div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <!--ngModel is required to capture the values-->
+      <input type="text" class="form-control" id ="username" ngModel name="uname" required [(ngModel)]="userdata.username">
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="text" class="form-control" id ="email" ngModel name="email" required [(ngModel)]="userdata.email" #email="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id ="password" ngModel name="password" [(ngModel)]="userdata.password">
+    </div>
+    <div *ngIf="!email.valid">
+      Invalid email
+    </div>
+    <button type ="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+  </div>
+</form>

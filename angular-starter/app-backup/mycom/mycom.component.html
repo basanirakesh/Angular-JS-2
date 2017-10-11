@@ -1,0 +1,21 @@
+<h1> my new comp comes as a child </h1>
+{{title}}
+<ul>
+  <li *ngFor="let course of courses">
+    {{course}}
+  </li>
+</ul>
+<!--Property  Binding-->
+<img [src]="imageurl"/>
+<!--CSS Class Binding-->
+<button class="btn btn-primary" [class.active]="isActive" (click)="btnClick($event)">Submit</button>
+<button [class.active]="isActive">Submit</button>
+<button class="btn btn-primary" >Submit</button>
+<button>Submit</button>
+<!--CSS Style binding-->
+<button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'grey'">Submit</button>
+<button class="btn btn-primary" [style.backgroundColor]="isActive ? 'grey' : 'grey'">Submit</button>
+<!--2 way data binding-->
+<input type = "text" [(ngModel)] = "title"/>
+<input type = "text" bindon-ngModel = "title"/>
+<input type = "button" (click) = "title = ''" value="clear"/>
